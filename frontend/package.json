@@ -1,21 +1,22 @@
 {
-    "name": "florist-frontend",
-    "private": true,
-    "version": "1.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "vue": "^3.5.0",
-        "vue-router": "^4.4.0"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "^4.2.1",
-        "@vitejs/plugin-vue": "^5.1.0",
-        "tailwindcss": "^4.2.1",
-        "vite": "^6.0.0"
-    }
+  "name": "florist-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "npx serve -s dist"
+  },
+  "dependencies": {
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0",
+    "serve": "^14.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "tailwindcss": "^4.2.1",
+    "vite": "^6.0.0"
+  }
 }
