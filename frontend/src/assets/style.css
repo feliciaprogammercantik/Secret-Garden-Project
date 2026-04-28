@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* ========================================
+   SECRET GARDEN — Design System
+   ======================================== */
+
+@theme {
+  --color-olive: #818263;
+  --color-sage: #C2C395;
+  --color-blush: #DDBAAE;
+  --color-rose: #EFD7CF;
+  --color-stone: #DCD4C1;
+  --color-cream: #F6EAD4;
+  --color-ivory: #FFFAF2;
+  --color-dark: #3a3a2e;
+  --color-body: #5a5a4a;
+  --color-muted: #8a8a7a;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-body);
+  background: var(--color-ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-dark);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-olive);
+}
+
+/* --- Animations --- */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* --- Page Transitions --- */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+/* --- Infinite Scroll for Gallery --- */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+  width: max-content;
+}
+
+/* Allows pausing animation on hover */
+.pause-animation {
+  animation-play-state: paused;
+}
+
+/* --- WhatsApp Jelly Hover Animation --- */
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.animate-jelly {
+  animation: jelly 0.5s ease-in-out;
+}
